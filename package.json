@@ -4,7 +4,7 @@
   "description": "Testing out the Angular2 framework",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "lite": "lite-server"
   },
   "repository": {
     "type": "git",
@@ -16,5 +16,8 @@
   "bugs": {
     "url": "https://github.com/qtheninja/Angular2StarterKit/issues"
   },
-  "homepage": "https://github.com/qtheninja/Angular2StarterKit#readme"
+  "homepage": "https://github.com/qtheninja/Angular2StarterKit#readme",
+  "devDependencies": {
+    "lite-server": "^2.2.2"
+  }
 }
