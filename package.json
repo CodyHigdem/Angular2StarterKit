@@ -3,13 +3,14 @@
   "version": "0.0.1",
   "description": "Testing out the Angular2 framework",
   "main": "index.js",
-  "scripts": {
-    "lite": "lite-server",
-    "tsc": "tsc",
-    "tsc:w": "tsc -w",
-    "typings": "typings",
-    "postinstall": "typings install"
-  },
+"scripts": {
+  "start": "tsc && concurrently \"npm run tsc:w\" \"npm run lite\"",
+  "lite": "lite-server",
+  "tsc": "tsc",
+  "tsc:w": "tsc -w",
+  "typings": "typings",
+  "postinstall": "typings install"
+},
   "repository": {
     "type": "git",
     "url": "git+https://github.com/qtheninja/Angular2StarterKit.git"
@@ -22,6 +23,7 @@
   },
   "homepage": "https://github.com/qtheninja/Angular2StarterKit#readme",
   "devDependencies": {
+    "concurrently": "^3.1.0",
     "lite-server": "^2.2.2",
     "typescript": "^2.0.3",
     "typings": "^1.4.0"
