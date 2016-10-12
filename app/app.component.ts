@@ -18,16 +18,27 @@ import { Component } from '@angular/core';
 			</nav>
 		</header>
 		<main>
-		<div class="jumbotron">
-			<h1>Welcome to our app!</h1>
-			<p>{{message}}</p>
-		</div>
-		<h2> User </h2>
-		<p> The user is {{ user.name }} || {{user.username}}. </p>
-		<h2> USERS ARRAY </h2>
-		<div *ngFor="let user of users">
-			{{user.name}} || {{user.username}}
-		</div>
+			<div class="row">
+				<div class="col-sm-4">
+					<h2> User </h2>
+					<p> The user is {{ user.name }} || {{user.username}}. </p>
+					<h2> USERS ARRAY </h2>
+					<ul class="list-group users-list">
+						<li class="list-group-item"
+							*ngFor="let user of users"> 
+							{{user.name}} || {{user.username}} 
+
+						</li>
+					</ul>
+				</div>
+				<div class="col-sm-8">
+					<div class="jumbotron">
+						<h1>Welcome to our app!</h1>
+						<p>{{message}}</p>
+					</div>
+				</div>
+			</div>
+
 		</main>
 		<footer class="text-center">
 			Copyright 2016
