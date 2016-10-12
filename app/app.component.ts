@@ -22,8 +22,12 @@ import { Component } from '@angular/core';
 			<h1>Welcome to our app!</h1>
 			<p>{{message}}</p>
 		</div>
-
+		<h2> User </h2>
 		<p> The user is {{ user.name }} || {{user.username}}. </p>
+		<h2> USERS ARRAY </h2>
+		<div *ngFor="let user of users">
+			{{user.name}} || {{user.username}}
+		</div>
 		</main>
 		<footer class="text-center">
 			Copyright 2016
@@ -43,5 +47,23 @@ export class AppComponent {
 		id: 1,
 		name: 'Chris',
 		username: 'angryChris'
-	}
+	};
+
+	users = [
+		{
+			id: 2,
+			name: 'second',
+			username: 'secondsone'
+		},
+		{
+			id: 3,
+			name: 'third',
+			username: 's3sone'
+		},
+		{
+			id: 4,
+			name: 'n4',
+			username: '4onesone'
+		}
+	];
 }
