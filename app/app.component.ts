@@ -61,6 +61,7 @@ import { User } from './shared/models/user';
 	`]
 })
 
+//[(ngModel)] 2 way databinding
 //This is how you'd pass data into the component for example message = 'hello', then show in template as {{message}}
 //no need for controller.message because it's only tied into this compoenent
 // * is a template driven expression in *ngFor or *ngIf="users"
