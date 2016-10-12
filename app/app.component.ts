@@ -32,9 +32,11 @@ import { Component } from '@angular/core';
 					</ul>
 				</div>
 				<div class="col-sm-8">
-					<div class="jumbotron">
-						<h1>Welcome to our app!</h1>
-						<p>{{message}}</p>
+					<div class="jumbotron"
+						*ngIf="activeUser">
+						<h2>{{activeUser.name}} <small>{{activeUser.username}}</small></h2>
+
+
 					</div>
 				</div>
 			</div>
