@@ -1,5 +1,7 @@
 //angular component
 import { Component } from '@angular/core';
+import { User } from './shared/models/user';
+
 //decorator
 
 /*
@@ -38,7 +40,7 @@ import { Component } from '@angular/core';
 						*ngIf="activeUser">
 						<h2>{{activeUser.name}} <small>{{activeUser.username}}</small></h2>
 					</div>
-					<div class="jumbotron" *ngIf="!activeUser">
+					<div class="jumbotron gocrazy" *ngIf="!activeUser">
 						<span class="glyphicon glyphicon-hand-left"></span>
 						<h2>Choose a user</h2>
 
@@ -63,10 +65,10 @@ import { Component } from '@angular/core';
 //no need for controller.message because it's only tied into this compoenent
 // * is a template driven expression in *ngFor or *ngIf="users"
 export class AppComponent {
-	message = 'Hello!';
+	message: string = 'Hello!';
 
 
-	users = [
+	users: User[] = [
 		{
 			id: 2,
 			name: 'second',
@@ -83,7 +85,7 @@ export class AppComponent {
 			username: '4onesone'
 		}
 	];
-	activeUser;
+	activeUser: User;
 
 	selectUser(user){
 		this.activeUser = user;
