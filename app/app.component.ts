@@ -20,12 +20,12 @@ import { Component } from '@angular/core';
 		<main>
 			<div class="row">
 				<div class="col-sm-4">
-					<h2> User </h2>
-					<p> The user is {{ user.name }} || {{user.username}}. </p>
+
 					<h2> USERS ARRAY </h2>
 					<ul class="list-group users-list">
 						<li class="list-group-item"
-							*ngFor="let user of users"> 
+							*ngFor="let user of users"
+							(click)="selectUser(user)"> 
 							{{user.name}} || {{user.username}} 
 
 						</li>
@@ -54,11 +54,7 @@ import { Component } from '@angular/core';
 // * is a template driven expression in *ngFor or *ngIf="users"
 export class AppComponent {
 	message = 'Hello!';
-	user = {
-		id: 1,
-		name: 'Chris',
-		username: 'angryChris'
-	};
+
 
 	users = [
 		{
@@ -77,4 +73,11 @@ export class AppComponent {
 			username: '4onesone'
 		}
 	];
+	activeUser;
+
+	selectUser(user){
+		this.activeUser = user;
+		console.log(this.activeUser);
+	}
+	
 }

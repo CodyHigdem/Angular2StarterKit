@@ -18,11 +18,6 @@ var core_1 = require('@angular/core');
 var AppComponent = (function () {
     function AppComponent() {
         this.message = 'Hello!';
-        this.user = {
-            id: 1,
-            name: 'Chris',
-            username: 'angryChris'
-        };
         this.users = [
             {
                 id: 2,
@@ -41,10 +36,14 @@ var AppComponent = (function () {
             }
         ];
     }
+    AppComponent.prototype.selectUser = function (user) {
+        this.activeUser = user;
+        console.log(this.activeUser);
+    };
     AppComponent = __decorate([
         core_1.Component({
             selector: 'my-app',
-            template: "\n\t\t<header>\n\t\t\t<nav class=\"navbar navbar-inverse\">\n\t\t\t\t<div class=\"navbar-header\">\n\t\t\t\t\t<a href=\"/\" class=\"navbar-brand\">My Angular 2 app</a>\n\t\t\t\t</div>\n\t\t\t</nav>\n\t\t</header>\n\t\t<main>\n\t\t\t<div class=\"row\">\n\t\t\t\t<div class=\"col-sm-4\">\n\t\t\t\t\t<h2> User </h2>\n\t\t\t\t\t<p> The user is {{ user.name }} || {{user.username}}. </p>\n\t\t\t\t\t<h2> USERS ARRAY </h2>\n\t\t\t\t\t<ul class=\"list-group users-list\">\n\t\t\t\t\t\t<li class=\"list-group-item\"\n\t\t\t\t\t\t\t*ngFor=\"let user of users\"> \n\t\t\t\t\t\t\t{{user.name}} || {{user.username}} \n\n\t\t\t\t\t\t</li>\n\t\t\t\t\t</ul>\n\t\t\t\t</div>\n\t\t\t\t<div class=\"col-sm-8\">\n\t\t\t\t\t<div class=\"jumbotron\">\n\t\t\t\t\t\t<h1>Welcome to our app!</h1>\n\t\t\t\t\t\t<p>{{message}}</p>\n\t\t\t\t\t</div>\n\t\t\t\t</div>\n\t\t\t</div>\n\n\t\t</main>\n\t\t<footer class=\"text-center\">\n\t\t\tCopyright 2016\n\t\t</footer>\n\t",
+            template: "\n\t\t<header>\n\t\t\t<nav class=\"navbar navbar-inverse\">\n\t\t\t\t<div class=\"navbar-header\">\n\t\t\t\t\t<a href=\"/\" class=\"navbar-brand\">My Angular 2 app</a>\n\t\t\t\t</div>\n\t\t\t</nav>\n\t\t</header>\n\t\t<main>\n\t\t\t<div class=\"row\">\n\t\t\t\t<div class=\"col-sm-4\">\n\n\t\t\t\t\t<h2> USERS ARRAY </h2>\n\t\t\t\t\t<ul class=\"list-group users-list\">\n\t\t\t\t\t\t<li class=\"list-group-item\"\n\t\t\t\t\t\t\t*ngFor=\"let user of users\"\n\t\t\t\t\t\t\t(click)=\"selectUser(user)\"> \n\t\t\t\t\t\t\t{{user.name}} || {{user.username}} \n\n\t\t\t\t\t\t</li>\n\t\t\t\t\t</ul>\n\t\t\t\t</div>\n\t\t\t\t<div class=\"col-sm-8\">\n\t\t\t\t\t<div class=\"jumbotron\">\n\t\t\t\t\t\t<h1>Welcome to our app!</h1>\n\t\t\t\t\t\t<p>{{message}}</p>\n\t\t\t\t\t</div>\n\t\t\t\t</div>\n\t\t\t</div>\n\n\t\t</main>\n\t\t<footer class=\"text-center\">\n\t\t\tCopyright 2016\n\t\t</footer>\n\t",
             styles: ["\n\t\t.jumbotron { box-shadow: 0 2px 0 rgba(0,0,0, 0.2); }\n\t"]
         }), 
         __metadata('design:paramtypes', [])
